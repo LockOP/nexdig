@@ -10,7 +10,7 @@ function Footer() {
         style={{
           width: "100%",
           marginTop: "40px",
-        //   borderTop: "1px solid",
+          //   borderTop: "1px solid",
           paddingTop: "40px",
           paddingBottom: "40px",
         }}
@@ -19,22 +19,28 @@ function Footer() {
           className="horiFlex"
           style={{ width: "100%", alignItems: "start" }}
         >
-          <img src={logo} alt="" style={{ height: "100px" }} />
+          <img
+            className="foologo"
+            src={logo}
+            alt=""
+            style={{ height: "100px" }}
+          />
           <div
             className="vertFlex"
             style={{ flex: 1, alignItems: "end", gap: "10px" }}
           >
             <div
+              className="f1"
               style={{
                 width: "100%",
                 textAlign: "end",
-                fontSize: "37.92px",
               }}
             >
               Get in touch with Us
             </div>
             <div className="horiFlex" style={{ gap: "10px" }}>
               <a
+                rel="noreferrer"
                 href="https://www.linkedin.com/company/nexgen-digimedia/"
                 target="_blank"
                 style={{
@@ -51,6 +57,7 @@ function Footer() {
           </div>
         </div>
       </div>
+
       <div
         className="horiFlex defPad"
         style={{

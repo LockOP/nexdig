@@ -30,7 +30,7 @@ button {
   box-sizing: border-box;
 }
 
-.cbr{
+.cbr {
   transition: all 200ms ease-in-out;
 }
 
@@ -59,12 +59,94 @@ button:hover .cbr {
 .vertFlex {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
-.logobg{
+.logobg {
   background-image: url(./images/borderlogo.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.t1 {
+  font-size: 67.92px;
+  text-align: "center";
+}
+
+.t2 {
+  width: 60%;
+  padding-bottom: 80px;
+  text-align: "center";
+}
+
+.bh {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: "80px";
+}
+
+.bs {
+  flex: 1;
+}
+
+.t2h {
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.wt {
+  font-size: 44.81px;
+}
+
+.lb {
+  height: 300px;
+}
+
+.f1 {
+  font-size: 37.92px;
+}
+
+@media (max-width: 920px) {
+  .t1 {
+    font-size: 27.92px;
+    text-align: start;
+  }
+  .t2 {
+    width: 100%;
+    padding-bottom: 20px;
+    text-align: start;
+  }
+  .bh {
+    flex-direction: column;
+    margin-top: "0px";
+  }
+  .bs {
+    flex: unset;
+    width: 100%;
+  }
+  .t2h {
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .wt {
+    font-size: 34.81px;
+    text-align: start;
+    width: 100%;
+    padding-left: 40px;
+  }
+  .lb {
+    height: 200px;
+  }
+  .foologo {
+    display: none;
+  }
+  .f1 {
+    font-size: 27.92px;
+  }
 }

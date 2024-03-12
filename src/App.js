@@ -12,14 +12,13 @@ function App() {
   const contentRef = useRef();
 
   const scrollToBottom = () => {
-    console.log("trigrer");
     if (contentRef.current) {
       contentRef.current.scrollTop = contentRef.current.scrollHeight;
     }
   };
 
   const services = [
-    { text: "Web Development", color: "#8E00D1", animation: i3 },
+    { text: "Web/App Development", color: "#8E00D1", animation: i3 },
     { text: "Graphic Designing", color: "#039E00", animation: i4 },
     { text: "Content Writing", color: "#DA5B00", animation: i1 },
     { text: "Social Media", color: "#7700FF", animation: i2 },
@@ -42,23 +41,20 @@ function App() {
           style={{ marginTop: "40px", gap: "30px", alignItems: "center" }}
         >
           <div
+            className="t1"
             style={{
               width: "100%",
-              textAlign: "center",
-              fontSize: "67.92px",
               paddingTop: "40px",
             }}
           >
             We are the creative digital media agency for your business
           </div>
           <div
+            className="t2"
             style={{
-              width: "60%",
-              textAlign: "center",
               fontSize: "16.88px",
               lineHeight: "28px",
               color: "#616161",
-              paddingBottom: "80px",
             }}
           >
             Connect your favorite payment and commerce services, create
@@ -66,14 +62,12 @@ function App() {
             one unified infrastructure.
           </div>
           <div
-            className="horiFlex logobg"
+            className="logobg t2h"
             style={{
-              height: "60vh",
               width: "100%",
-              justifyContent: "center",
             }}
           >
-            <div style={{ fontSize: "44.81px" }}>We</div>
+            <div className="wt">We</div>
             <ul
               style={{
                 fontSize: "16.73px",
@@ -83,15 +77,12 @@ function App() {
             >
               <li>understand business culture.</li>
               <li>craft your business goals to the best.</li>
-              <li>market your vision with healthy culture</li>{" "}
+              <li>market your vision with healthy culture</li>
               <li>ensure your business is on the latest market trends</li>
             </ul>
           </div>
 
-          <div
-            className="horiFlex"
-            style={{ width: "100%", gap: "10px", marginTop: "80px" }}
-          >
+          <div className="bh" style={{ width: "100%", gap: "10px" }}>
             {services.map((item) => {
               return (
                 <Box
@@ -112,9 +103,8 @@ function App() {
 function Box({ text = "Service Type", color = "yellow", animation = i1 }) {
   return (
     <div
-      className="vertFlex"
+      className="vertFlex bs"
       style={{
-        flex: 1,
         height: "auto",
         // backgroundColor: color,
         boxSizing: "border-box",
@@ -127,28 +117,52 @@ function Box({ text = "Service Type", color = "yellow", animation = i1 }) {
       }}
     >
       <Lottie
+        className="lb"
         animationData={animation}
         loop={true}
         autoplay={true}
         speed={0.6}
-        style={{ width: "auto", height: "300px" }} // Set width and height of the animation
+        style={{ width: "auto" }} // Set width and height of the animation
       />
       <div
         style={{
           // position: "absolute",
           // bottom: "0px",
-          // fontFamily: "Roboto Condensed",
           backgroundColor: "white",
           width: "100%",
           textAlign: "center",
-          padding: "10px",
           borderRadius: "14px",
           border: "1px solid",
           borderColor: color,
-          // color: "white",
+          color: color,
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "5px",
         }}
       >
-        {text}
+        <p
+          className=""
+          style={{
+            fontFamily: "Roboto Condensed",
+            fontSize: "30px",
+            lineHeight: "32px",
+            margin: "unset",
+          }}
+        >
+          {text.split(" ")[0]}
+        </p>
+        <p
+          style={{
+            fontFamily: "Roboto Condensed",
+            fontSize: "24px",
+            lineHeight: "28px",
+            margin: "unset",
+          }}
+        >
+          {text.split(" ")[1]}
+        </p>
       </div>
     </div>
   );
