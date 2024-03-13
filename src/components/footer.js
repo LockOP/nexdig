@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/logocolor.png";
+import logo from "../images/logo.svg";
 import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 
 function Footer() {
