@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../images/logocolor.png";
-import { AiFillLinkedin } from "react-icons/ai";
+import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 
 function Footer() {
   return (
@@ -41,6 +41,17 @@ function Footer() {
             <div className="horiFlex" style={{ gap: "10px" }}>
               <a
                 rel="noreferrer"
+                href="https://www.instagram.com/nexgen_digimedia?igsh=ODZlZjNtYnhwcWNx"
+                target="_blank"
+                style={{
+                  fontSize: "20px",
+                  letterSpacing: "1px",
+                }}
+              >
+                <AiFillInstagram size={40} color="#F56040" />
+              </a>
+              <a
+                rel="noreferrer"
                 href="https://www.linkedin.com/company/nexgen-digimedia/"
                 target="_blank"
                 style={{
@@ -48,8 +59,11 @@ function Footer() {
                   letterSpacing: "1px",
                 }}
               >
-                <AiFillLinkedin size={40} />
+                <AiFillLinkedin size={40} color="#0077B5" />
               </a>
+            </div>
+            <div className="horiFlex" style={{ gap: "10px" }}>
+              deepak.pandey@nexgendigimedia.com
             </div>
             <div className="horiFlex" style={{ gap: "10px" }}>
               +91 90125 10996
