@@ -9,7 +9,7 @@ export const Form = () => {
       type: "success",
       content: "Message sent.",
       className: "custom-class",
-      duration: 1,
+      duration: 3,
     });
   };
 
@@ -21,29 +21,39 @@ export const Form = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs
-      .send(
-        "service_xlz8tab",
-        "template_feds2ge",
-        {
-          user_name: form.user_name,
-          user_email: form.user_email,
-          message: form.message,
-        },
-        {
-          publicKey: "SZWR3UVmDGvo_pIE_",
-        }
-      )
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          success();
-        },
-        (error) => {
-          console.log("FAILED...", error);
-        }
-      );
+    if (
+      form.user_name !== "" &&
+      form.user_email !== "" &&
+      form.message !== ""
+    ) {
+      emailjs
+        .send(
+          "service_xlz8tab",
+          "template_feds2ge",
+          {
+            user_name: form.user_name,
+            user_email: form.user_email,
+            message: form.message,
+          },
+          {
+            publicKey: "SZWR3UVmDGvo_pIE_",
+          }
+        )
+        .then(
+          () => {
+            console.log("SUCCESS!");
+            success();
+            setForm({
+              user_name: "",
+              user_email: "",
+              message: "",
+            });
+          },
+          (error) => {
+            console.log("FAILED...", error);
+          }
+        );
+    }
   };
 
   return (
