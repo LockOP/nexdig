@@ -111,6 +111,62 @@ button:hover .cbr {
   font-size: 37.92px;
 }
 
+.ft1 {
+  margin-bottom: 14px;
+  color: white;
+  font-size: 24px;
+}
+
+.fi {
+  box-sizing: border-box;
+  outline: none;
+  background-color: #8000ff;
+  border: none;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #ffffffc7;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+}
+
+.fi::placeholder {
+  color: #ffffffc7;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.ft {
+  box-sizing: border-box;
+  resize: vertical;
+  outline: none;
+  background-color: #8000ff;
+  border: none;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #ffffffc7;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+}
+
+.ft::placeholder {
+  color: #ffffffc7;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.fb {
+  border-radius: 3px;
+  background-color: white;
+  color: #8000ff;
+  font-size: 14px;
+  width: max-content;
+  font-weight: bolder;
+}
+
+.fbox {
+  width: 500px;
+}
+
 @media (max-width: 920px) {
   .t1 {
     font-size: 27.92px;
@@ -148,5 +204,9 @@ button:hover .cbr {
   }
   .f1 {
     font-size: 27.92px;
+  }
+  .fbox {
+    width: 100%;
+    margin: 0px 60px;
   }
 }

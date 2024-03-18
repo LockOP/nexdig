@@ -7,6 +7,7 @@ import i3 from "./images/html-5.json";
 import i4 from "./images/reveal-loading.json";
 import Footer from "./components/footer";
 import { useRef } from "react";
+import { Form } from "./components/form";
 
 function App() {
   const contentRef = useRef();
@@ -34,6 +35,7 @@ function App() {
           width: "100%",
           flexGrow: 1,
           overflowY: "auto",
+          
         }}
       >
         <div
@@ -94,6 +96,7 @@ function App() {
             })}
           </div>
         </div>{" "}
+        <Form />
         <Footer />
       </div>
     </div>
