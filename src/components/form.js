@@ -62,13 +62,13 @@ export const Form = () => {
 
   return (
     <div
+      className="fn21"
       style={{
         width: "100%",
         display: "flex",
         justifyContent: "center",
         flexDirection: "row",
         marginTop: "40px",
-        padding: "180px 0px",
         position: "relative",
       }}
     >
