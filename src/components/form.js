@@ -93,6 +93,7 @@ export const Form = () => {
         >
           <div className="ft1">Send us a message</div>
           <input
+            autoComplete="new-password"
             className="fi"
             type="text"
             placeholder="NAME"
@@ -102,6 +103,7 @@ export const Form = () => {
             }
           />
           <input
+            autoComplete="new-password"
             className="fi"
             type="email"
             placeholder="EMAIL"
@@ -111,6 +113,7 @@ export const Form = () => {
             }
           />
           <textarea
+            autoComplete="new-password"
             className="ft"
             name="message"
             placeholder="MESSAGE"
