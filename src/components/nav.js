@@ -6,10 +6,11 @@ function Nav({ contact }) {
     <div
       className="defPad horiFlex w-screen"
       style={{
-        height: "150px",
+        padding: "15px 20px",
         justifyContent: "space-between",
         backgroundColor: "white",
         borderBottom: "1px solid black",
+        boxSizing: "border-box",
       }}
     >
       <div className="rc" style={{ userSelect: "none" }}>

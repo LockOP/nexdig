@@ -117,6 +117,11 @@ button:hover .cbr {
   font-size: 24px;
 }
 
+.ft1-2 {
+  color: black;
+  font-size: 24px;
+}
+
 .fi {
   box-sizing: border-box;
   outline: none;
@@ -139,6 +144,7 @@ button:hover .cbr {
   box-sizing: border-box;
   resize: vertical;
   outline: none;
+  min-height: 100px;
   background-color: #8000ff;
   border: none;
   padding-bottom: 14px;
@@ -161,10 +167,63 @@ button:hover .cbr {
   font-size: 14px;
   width: max-content;
   font-weight: bolder;
+  transition: all 100ms ease-in-out;
+}
+
+.fb:hover {
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.296),
+    0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.fb:active {
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0), 0 3px 6px -4px rgba(0, 0, 0, 0),
+    0 9px 28px 8px rgba(0, 0, 0, 0);
+  transform: translateY(0px);
 }
 
 .fbox {
-  width: 500px;
+  width: 360px;
+}
+
+.shd {
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.296),
+    0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff95;
+}
+
+.fbg {
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/footerbg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+}
+
+.fclt {
+  text-decoration: unset;
+  text-decoration-line: unset;
+  color: black;
+}
+
+a:hover div svg {
+  scale: 120%;
+  transition: all 200ms ease;
+}
+
+.ant-message-custom-content span,
+.ant-message-success span {
+  font-size: 14px;
+}
+
+.fdm {
+  flex-direction: row;
 }
 
 @media (max-width: 920px) {
@@ -207,6 +266,9 @@ button:hover .cbr {
   }
   .fbox {
     width: 100%;
-    margin: 0px 60px;
+    margin: 0px;
+  }
+  .fdm {
+    flex-direction: column;
   }
 }
