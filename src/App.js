@@ -6,16 +6,58 @@ import i2 from "./images/facebook.json";
 import i3 from "./images/html-5.json";
 import i4 from "./images/reveal-loading.json";
 import Footer from "./components/footer";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Form } from "./components/form";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import OurWork from "./components/ourWork";
 
 function App() {
   const contentRef = useRef();
+  const duration = 500; // Duration of the scroll animation in milliseconds
+
+  const handleScroll = (target) => {
+    const targetElement = document.getElementById(target);
+    const targetOffset = targetElement.offsetTop - 70;
+    const startTime = performance.now();
+    const element = document.getElementById("parent");
+    const startScrollY = element.scrollTop;
+    const duration = 500; // Adjust as needed
+
+    const scrollAnimation = (timestamp) => {
+      const progress = timestamp - startTime;
+      const scrollY = easeInOutQuad(
+        progress,
+        startScrollY,
+        targetOffset - startScrollY,
+        duration
+      );
+      element.scrollTo(0, scrollY);
+
+      if (progress < duration) {
+        requestAnimationFrame(scrollAnimation);
+      }
+    };
+
+    requestAnimationFrame(scrollAnimation);
+  };
+
+  // Easing function
+  const easeInOutQuad = (t, b, c, d) => {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  };
 
   const scrollToBottom = () => {
-    if (contentRef.current) {
-      contentRef.current.scrollTop = contentRef.current.scrollHeight;
-    }
+    // if (contentRef.current) {
+    //   contentRef.current.scrollTop = contentRef.current.scrollHeight;
+    // }
+    handleScroll("contact-form");
+    // const element = document.getElementById("contact-form");
+    // element.scrollIntoView({
+    //   behavior: "smooth",
+    // });
   };
 
   const services = [
@@ -24,82 +66,103 @@ function App() {
     { text: "Content Writing", color: "#DA5B00", animation: i1 },
     { text: "Social Media", color: "#7700FF", animation: i2 },
   ];
-  return (
-    <div className="w-screen h-screen vertFlex">
-      <Nav contact={scrollToBottom} />
-      <div
-        ref={contentRef}
-        className="vertFlex"
-        style={{
-          alignItems: "start",
-          width: "100%",
-          flexGrow: 1,
-          overflowY: "auto",
-          
-        }}
-      >
-        <div
-          className="vertFlex defPad"
-          style={{ marginTop: "40px", gap: "30px", alignItems: "center" }}
-        >
-          <div
-            className="t1"
-            style={{
-              width: "100%",
-              paddingTop: "40px",
-            }}
-          >
-            We are the creative digital media agency for your business
-          </div>
-          <div
-            className="t2"
-            style={{
-              fontSize: "16.88px",
-              lineHeight: "28px",
-              color: "#616161",
-            }}
-          >
-            Connect your favorite payment and commerce services, create
-            beautiful customer journeys and expand into new markets fast—with
-            one unified infrastructure.
-          </div>
-          <div
-            className="logobg t2h"
-            style={{
-              width: "100%",
-            }}
-          >
-            <div className="wt">We</div>
-            <ul
-              style={{
-                fontSize: "16.73px",
-                color: "#616161",
-                lineHeight: "28px",
-              }}
-            >
-              <li>understand business culture.</li>
-              <li>craft your business goals to the best.</li>
-              <li>market your vision with healthy culture</li>
-              <li>ensure your business is on the latest market trends</li>
-            </ul>
-          </div>
 
-          <div className="bh" style={{ width: "100%", gap: "10px" }}>
-            {services.map((item) => {
+  const [page, setPage] = useState(1);
+  return (
+    <Router>
+      <div className="w-screen h-screen vertFlex">
+        <Nav handleScroll={handleScroll} setPage={setPage} />
+        <Routes>
+          <Route
+            path="/"
+            Component={() => {
               return (
-                <Box
-                  text={item.text}
-                  color={item.color}
-                  animation={item.animation}
-                />
+                <div
+                  ref={contentRef}
+                  id="parent"
+                  className="vertFlex"
+                  style={{
+                    alignItems: "start",
+                    width: "100%",
+                    flexGrow: 1,
+                    overflowY: "auto",
+                  }}
+                >
+                  <div
+                    className="vertFlex defPad"
+                    style={{
+                      marginTop: "40px",
+                      gap: "30px",
+                      alignItems: "center",
+                    }}
+                  >
+                    <div
+                      className="t1"
+                      style={{
+                        width: "100%",
+                        paddingTop: "40px",
+                      }}
+                    >
+                      We are the creative digital media agency for your business
+                    </div>
+                    <div
+                      className="t2"
+                      style={{
+                        fontSize: "16.88px",
+                        lineHeight: "28px",
+                        color: "#616161",
+                      }}
+                    >
+                      We are a next generation digital media agency
+                      understanding your business objectives. We thrive to
+                      implement effective digital marketing services for your
+                      business.
+                    </div>
+                    <div
+                      className="logobg t2h"
+                      style={{
+                        width: "100%",
+                      }}
+                    >
+                      <div className="wt">We</div>
+                      <ul
+                        style={{
+                          fontSize: "16.73px",
+                          color: "#616161",
+                          lineHeight: "28px",
+                        }}
+                      >
+                        <li>understand business culture.</li>
+                        <li>craft your business goals to the best.</li>
+                        <li>market your vision with healthy culture</li>
+                        <li>
+                          ensure your business is on the latest market trends
+                        </li>
+                      </ul>
+                    </div>
+
+                    <OurWork />
+                    {/* <div className="bh" style={{ width: "100%", gap: "10px" }}>
+                      {services.map((item) => {
+                        return (
+                          <Box
+                            text={item.text}
+                            color={item.color}
+                            animation={item.animation}
+                          />
+                        );
+                      })}
+                    </div> */}
+                  </div>{" "}
+                  <Form />
+                  <Footer />
+                </div>
               );
-            })}
-          </div>
-        </div>{" "}
-        <Form />
-        <Footer />
+            }}
+          />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 

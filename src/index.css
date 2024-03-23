@@ -137,7 +137,7 @@ button:hover .cbr {
 .fi::placeholder {
   color: #ffffffc7;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .ft {
@@ -157,7 +157,7 @@ button:hover .cbr {
 .ft::placeholder {
   color: #ffffffc7;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .fb {
@@ -203,7 +203,7 @@ button:hover .cbr {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(./images/footerbg.jpg);
+  background-image: url('./images/footerbg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -228,6 +228,25 @@ a:hover div svg {
 
 .fdm {
   flex-direction: row;
+}
+
+.ctxt {
+  color: #797979;
+  font-size: 14px;
+}
+
+.b22 {
+  background-color: unset;
+  border-radius: unset;
+  color: black;
+  font-weight: bold;
+  transition: all 100ms ease-in-out;
+  margin: 0px 30px;
+  padding: 0 10px;
+}
+
+.b22:hover {
+  scale: 105%;
 }
 
 @media (max-width: 920px) {

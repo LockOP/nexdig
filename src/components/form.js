@@ -13,7 +13,7 @@ export const Form = () => {
       type: "success",
       content: text,
       className: "custom-class",
-      duration: 1,
+      duration: 1.5,
     });
   };
 
@@ -62,6 +62,7 @@ export const Form = () => {
 
   return (
     <div
+      id="contact-form"
       className="fn21"
       style={{
         width: "100%",
@@ -70,6 +71,7 @@ export const Form = () => {
         flexDirection: "row",
         marginTop: "40px",
         position: "relative",
+        boxSizing: "border-box",
       }}
     >
       {contextHolder}

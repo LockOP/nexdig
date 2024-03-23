@@ -1,7 +1,7 @@
 import React from "react";
 import Cbutton from "./common/cbutton";
 
-function Nav({ contact }) {
+function Nav({ handleScroll, setPage }) {
   return (
     <div
       className="defPad horiFlex w-screen"
@@ -13,10 +13,23 @@ function Nav({ contact }) {
         boxSizing: "border-box",
       }}
     >
-      <div className="rc" style={{ userSelect: "none" }}>
-        Nexgen Digimedia
+      <div className="rc">Nexgen Digimedia</div>
+      <div className="horiFlex">
+        <button
+          className="b22"
+          onClick={() => {
+            handleScroll("our-clients");
+          }}
+        >
+          Our Work
+        </button>
+        <Cbutton
+          text="Contact"
+          contact={() => {
+            handleScroll("contact-form");
+          }}
+        />
       </div>
-      <Cbutton text="Contact" contact={contact} />
     </div>
   );
 }
