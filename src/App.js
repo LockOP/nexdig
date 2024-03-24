@@ -10,6 +10,7 @@ import { useRef, useState } from "react";
 import { Form } from "./components/form";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OurWork from "./components/ourWork";
+import SpecialCursor from "./components/specialCursor";
 
 function App() {
   const contentRef = useRef();
@@ -72,6 +73,7 @@ function App() {
     <Router>
       <div className="w-screen h-screen vertFlex">
         <Nav handleScroll={handleScroll} setPage={setPage} />
+
         <Routes>
           <Route
             path="/"
@@ -88,6 +90,7 @@ function App() {
                     overflowY: "auto",
                   }}
                 >
+                  <SpecialCursor />
                   <div
                     className="vertFlex defPad"
                     style={{

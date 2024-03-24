@@ -304,6 +304,16 @@ function OurWork() {
           border: "1px solid black",
         }}
       />
+      <p className="ctxt">
+        As a team, we've had the privilege of successfully delivering over 50
+        projects across various regions in India. Our collective expertise has
+        been instrumental in guiding businesses towards embracing digital
+        strategies, allowing them to expand their reach and cultivate stronger
+        connections with their target audience. Through our tailored solutions
+        and hands-on approach, we've assisted these businesses in navigating the
+        complexities of the digital landscape, ultimately driving increased
+        customer engagement and facilitating sustainable growth.
+      </p>
     </div>
   );
 }
