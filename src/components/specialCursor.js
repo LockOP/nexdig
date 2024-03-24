@@ -5,6 +5,7 @@ export default function SpecialCursor() {
   const [cursorStyle, setCursorStyle] = useState({
     transition: "none",
     transform: "translate(-50%, -50%)", // Center the cursor initially
+    filter: 'none',
   });
 
   const [scale1, setScale1] = useState("100%");
@@ -21,6 +22,7 @@ export default function SpecialCursor() {
         setCursorStyle({
           transition: "transform 0.15s ease-out",
           transform: `translate(${newX}px, ${newY}px)`,
+          filter: 'blur(1px)', // Add motion blur
         });
         setCursorPosition({ x: newX, y: newY });
       }, 150); // Adjust delay as needed

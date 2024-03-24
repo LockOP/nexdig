@@ -363,7 +363,7 @@ a:hover div svg {
   border-radius: 100%;
   display: flex;
   align-items: center;
-  animation: rotate1 2s linear reverse infinite;
+  animation: rotate1 1.5s linear reverse infinite;
   transition: all 500ms ease-in-out;
 }
 
