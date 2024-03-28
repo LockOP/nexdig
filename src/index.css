@@ -297,6 +297,9 @@ a:hover div svg {
   .fn21 {
     padding: 0px 0px;
   }
+  .defPad {
+    padding: 0 20px;
+  }
 }
 
 /* cursor starts */

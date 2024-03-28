@@ -16,7 +16,7 @@ const content = (paras, key, links) => {
     >
       {paras.map((item, index) => {
         return (
-          <div key={key * 10 + index} className="horiFlex ctxt" style={{}}>
+          <div key={key * 10 + index} className="vertFlex ctxt">
             {item}
           </div>
         );
@@ -38,7 +38,7 @@ const content = (paras, key, links) => {
               cursor: "pointer",
               gap: "20px",
               textDecorationLine: "unset",
-              color: "#797979",
+              color: "#8000ff",
               margin: "5px 0px",
             }}
             className="horiFlex"
@@ -48,13 +48,13 @@ const content = (paras, key, links) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                border: "1px solid #797979",
+                border: "1px solid #8000ff",
                 width: "40px",
                 height: "40px",
                 borderRadius: "100%",
               }}
             >
-              <PiGlobe color="black" size={22} />
+              <PiGlobe color="#8000ff" size={22} />
             </div>
           </a>
         )}
@@ -67,7 +67,7 @@ const content = (paras, key, links) => {
               cursor: "pointer",
               gap: "20px",
               textDecorationLine: "unset",
-              color: "#797979",
+              color: "#8000ff",
               margin: "5px 0px",
             }}
             className="horiFlex"
@@ -77,13 +77,13 @@ const content = (paras, key, links) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                border: "1px solid #797979",
+                border: "1px solid #8000ff",
                 width: "40px",
                 height: "40px",
                 borderRadius: "100%",
               }}
             >
-              <GrInstagram color="black" size={16} />
+              <GrInstagram color="#8000ff" size={16} />
             </div>
           </a>
         )}
@@ -96,7 +96,7 @@ const content = (paras, key, links) => {
               cursor: "pointer",
               gap: "20px",
               textDecorationLine: "unset",
-              color: "#797979",
+              color: "#8000ff",
               margin: "5px 0px",
             }}
             className="horiFlex"
@@ -106,13 +106,13 @@ const content = (paras, key, links) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                border: "1px solid #797979",
+                border: "1px solid #8000ff",
                 width: "40px",
                 height: "40px",
                 borderRadius: "100%",
               }}
             >
-              <FaFacebookF color="black" size={16} />
+              <FaFacebookF color="#8000ff" size={16} />
             </div>
           </a>
         )}
@@ -125,7 +125,7 @@ const content = (paras, key, links) => {
               cursor: "pointer",
               gap: "20px",
               textDecorationLine: "unset",
-              color: "#797979",
+              color: "#8000ff",
               margin: "5px 0px",
             }}
             className="horiFlex"
@@ -135,13 +135,13 @@ const content = (paras, key, links) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                border: "1px solid #797979",
+                border: "1px solid #8000ff",
                 width: "40px",
                 height: "40px",
                 borderRadius: "100%",
               }}
             >
-              <FaLinkedinIn color="black" size={16} />
+              <FaLinkedinIn color="#8000ff" size={16} />
             </div>
           </a>
         )}
@@ -154,7 +154,7 @@ const content = (paras, key, links) => {
               cursor: "pointer",
               gap: "20px",
               textDecorationLine: "unset",
-              color: "#797979",
+              color: "#8000ff",
               margin: "5px 0px",
             }}
             className="horiFlex"
@@ -164,13 +164,13 @@ const content = (paras, key, links) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                border: "1px solid #797979",
+                border: "1px solid #8000ff",
                 width: "40px",
                 height: "40px",
                 borderRadius: "100%",
               }}
             >
-              <FaTwitter color="black" size={16} />
+              <FaTwitter color="#8000ff" size={16} />
             </div>
           </a>
         )}
@@ -180,12 +180,6 @@ const content = (paras, key, links) => {
 };
 
 function OurWork() {
-  const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
-
   const clientData = [
     {
       label: "Aikyam Aviation",
@@ -281,7 +275,7 @@ function OurWork() {
   return (
     <div
       className="vertFlex"
-      style={{ width: "100%", gap: "10px" }}
+      style={{ width: "100%", gap: "0px" }}
       id="our-clients"
     >
       <p className="ft1-2">Our Clients</p>
@@ -297,11 +291,14 @@ function OurWork() {
         bordered={false}
         defaultActiveKey={[1]}
         expandIcon={({ isActive }) => (
-          <AiFillCaretRight style={{ rotate: isActive ? "90deg" : "0deg" }} />
+          <AiFillCaretRight
+            color="#8000ff"
+            style={{ rotate: isActive ? "90deg" : "0deg" }}
+          />
         )}
         style={{
           backgroundColor: "white",
-          border: "1px solid black",
+          border: "1px solid #8000ff",
         }}
       />
       <p className="ctxt">

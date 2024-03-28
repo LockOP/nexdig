@@ -1,16 +1,14 @@
 import Lottie from "lottie-react";
 import "./App.css";
 import Nav from "./components/nav";
-import i1 from "./images/businessman-holding-blank-placard.json";
-import i2 from "./images/facebook.json";
-import i3 from "./images/html-5.json";
-import i4 from "./images/reveal-loading.json";
+
 import Footer from "./components/footer";
 import { useRef, useState } from "react";
 import { Form } from "./components/form";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OurWork from "./components/ourWork";
 import SpecialCursor from "./components/specialCursor";
+import OurExpertise from "./components/ourExpertise";
 
 function App() {
   const contentRef = useRef();
@@ -60,13 +58,6 @@ function App() {
     //   behavior: "smooth",
     // });
   };
-
-  const services = [
-    { text: "Web/App Development", color: "#8E00D1", animation: i3 },
-    { text: "Graphic Designing", color: "#039E00", animation: i4 },
-    { text: "Content Writing", color: "#DA5B00", animation: i1 },
-    { text: "Social Media", color: "#7700FF", animation: i2 },
-  ];
 
   const [page, setPage] = useState(1);
   return (
@@ -143,20 +134,9 @@ function App() {
                         </li>
                       </ul>
                     </div>
-
+                    <OurExpertise />
                     <OurWork />
-                    {/* <div className="bh" style={{ width: "100%", gap: "10px" }}>
-                      {services.map((item) => {
-                        return (
-                          <Box
-                            text={item.text}
-                            color={item.color}
-                            animation={item.animation}
-                          />
-                        );
-                      })}
-                    </div> */}
-                  </div>{" "}
+                  </div>
                   <Form />
                   <Footer />
                 </div>
@@ -166,74 +146,6 @@ function App() {
         </Routes>
       </div>
     </Router>
-  );
-}
-
-function Box({ text = "Service Type", color = "yellow", animation = i1 }) {
-  return (
-    <div
-      className="vertFlex bs"
-      style={{
-        height: "auto",
-        // backgroundColor: color,
-        boxSizing: "border-box",
-        border: "1px solid",
-        borderColor: color,
-        alignItems: "center",
-        borderRadius: "24px",
-        padding: "20px",
-        position: "relative",
-      }}
-    >
-      <Lottie
-        className="lb"
-        animationData={animation}
-        loop={true}
-        autoplay={true}
-        speed={0.6}
-        style={{ width: "auto" }} // Set width and height of the animation
-      />
-      <div
-        style={{
-          // position: "absolute",
-          // bottom: "0px",
-          backgroundColor: "white",
-          width: "100%",
-          textAlign: "center",
-          borderRadius: "14px",
-          border: "1px solid",
-          borderColor: color,
-          color: color,
-          paddingTop: "10px",
-          paddingBottom: "10px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "5px",
-        }}
-      >
-        <p
-          className=""
-          style={{
-            fontFamily: "Roboto Condensed",
-            fontSize: "30px",
-            lineHeight: "32px",
-            margin: "unset",
-          }}
-        >
-          {text.split(" ")[0]}
-        </p>
-        <p
-          style={{
-            fontFamily: "Roboto Condensed",
-            fontSize: "24px",
-            lineHeight: "28px",
-            margin: "unset",
-          }}
-        >
-          {text.split(" ")[1]}
-        </p>
-      </div>
-    </div>
   );
 }
 
